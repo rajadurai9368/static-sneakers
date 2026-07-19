@@ -1,0 +1,51 @@
+/* ==========================================================================
+   STATIC — responsive rules (media queries + reduced motion). Loaded after style.css.
+   ========================================================================== */
+
+/* ==========================================================================
+   RESPONSIVE — mobile-first, scale up
+   ========================================================================== */
+@media (min-width: 620px) {
+  .strip { grid-template-columns: repeat(4, 1fr); }
+  .strip__item { border-bottom: 0; }
+  .strip__item:nth-child(2n) { border-right: 1px solid var(--line); }
+  .strip__item:last-child { border-right: 0; }
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 900px) {
+  .nav__links { display: flex; }
+  .nav__burger { display: none; }
+  .mobile-menu { display: none !important; }
+  .grid { grid-template-columns: repeat(4, 1fr); }
+  .drop { grid-template-columns: 1.1fr 1fr; }
+  .drop__media { border-bottom: 0; border-right: 1px solid var(--line); }
+  .lookbook { grid-template-columns: 1fr 1fr; }
+  .lookbook__cell { border-bottom: 0; border-right: 1px solid var(--line); }
+  .lookbook__cell:last-child { border-right: 0; }
+  .footer__top { grid-template-columns: 1.4fr 2fr; }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .card:hover, .btn:hover, .lookbook__cell:hover img, .card:hover .card__media img { transform: none; }
+}
+
+
+/* ---------- Inner-page responsive ---------- */
+@media (min-width: 620px) {
+  .features { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 900px) {
+  .features { grid-template-columns: repeat(3, 1fr); }
+  .team-grid { grid-template-columns: repeat(3, 1fr); }
+  .split { grid-template-columns: 1.05fr .95fr; }
+  .timeline__row { grid-template-columns: 200px 1fr; gap: 32px; }
+  .drop-row { grid-template-columns: 1fr 1fr; }
+  .drop-row__media { border-bottom: 0; }
+  .drop-row--flip .drop-row__media { order: 2; border-left: 1px solid var(--line); }
+  .contact { grid-template-columns: 1.25fr 1fr; }
+}
+

@@ -1,0 +1,6 @@
+# robots.txt — STATIC WORLDWIDE
+# Replace the Sitemap URL below with your real domain after deploying.
+User-agent: *
+Allow: /
+
+Sitemap: https://static-worldwide.example.com/sitemap.xml
